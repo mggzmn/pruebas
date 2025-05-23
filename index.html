@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Single SCO Course</title>
+    <link rel="stylesheet" href="styles/merian.css" />
+    <link rel="stylesheet" href="styles/course.css" />
+    <link rel="shortcut icon" type="image/png" href="multimedia/images/global/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Paytone%20One:wght@100;300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Audio/Video Container -->
+    <audio id="main-media" style="display: none" preload="auto"></audio>
+
+    <!-- Dynamic Slide Container -->
+    <main id="slide-container"></main>
+    <!-- Navigation Bar -->
+    <nav id="navigation-bar" class="nav-controls">
+      <button id="btn-previous" class="nav-btn nav-btn-previous" disabled title="Anterior"></button>
+      <button id="btn-play-pause" class="nav-btn nav-btn-playpause" title="Reproducir-Pausar"></button>
+      <button id="btn-mute" class="nav-btn nav-btn-mute" title="Mute"></button>
+      <button id="btn-volume-up" class="nav-btn nav-btn-volumeup" title="Subir"></button>
+      <button id="btn-volume-down" class="nav-btn nav-btn-volumedown" title="Bajar"></button>
+      <button id="btn-next" class="nav-btn nav-btn-next" disabled title="Siguiente"></button>
+      <button id="btn-glossary" class="nav-btn nav-btn-glossary" disabled title="Glosario"></button>
+      <button id="btn-TOC" class="nav-btn nav-btn-toc" disabled title="Tabla de Contenidos"></button>
+    </nav>
+
+    <script type="module">
+      import { CourseController } from "./js/merian/main.js";
+      window.courseController = CourseController.getInstance();
+      courseController.init();
+    </script>
+    <script src="js/course/courseFunctions.js"></script>
+    <script src="js/merian/sessions/SCORM_12_APIWrapper.js"></script>
+    <script src="js/merian/sessions/SCORM_2004_APIWrapper.js"></script>
+    <script type="module" src="js/merian/sessions/scormSession.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+const quizConfig = {
+  numQuestions: 5,
+  minScore: 70,
+  maxAttempts: 3,
+  randomizeQuestions: false,
+  randomizeOptions: false,
+  questions: [
+    {
+      text: "Pregunta 1",
+      options: ["Opción 1", "Opción 2", "Opción 3"],
+      correctAnswer: "Opción 1",
+      feedback: "Feedback para la pregunta 1",
+      multipleAnswers: false, 
+    },
+    {
+      text: "Pregunta 2",
+      options: ["Opción 1", "Opción 2", "Opción 3"],
+      correctAnswer: ["Opción 2", "Opción 3"], 
+      feedback: "Feedback para la pregunta 2",
+      multipleAnswers: true, 
+    },
+    {
+      text: "Pregunta 3",
+      options: ["Opción 1", "Opción 2", "Opción 3"],
+      correctAnswer: "Opción 3",
+      feedback: "Feedback para la pregunta 3",
+    },
+    {
+      text: "Pregunta 4",
+      options: ["Opción 1", "Opción 2", "Opción 3"],
+      correctAnswer: "Opción 1",
+      feedback: "Feedback para la pregunta 4",
+    },
+    {
+      text: "Pregunta 5",
+      options: ["Opción 1", "Opción 2", "Opción 3"],
+      correctAnswer: "Opción 2",
+      feedback: "Feedback para la pregunta 5",
+    },
+    {
+      text: "Pregunta 6",
+      options: ["Opción 6", "Opción 2", "Opción 3"],
+      correctAnswer: "Opción 6",
+      feedback: "Feedback para la pregunta 6",
+    },
+    {
+      text: "Pregunta7",
+      options: ["Opción 1", "Opción 7", "Opción 3"],
+      correctAnswer: "Opción 7",
+      feedback: "Feedback para la pregunta 7",
+    },
+    {
+      text: "Pregunta 8",
+      options: ["Opción 1", "Opción 2", "Opción 8"],
+      correctAnswer: "Opción 8",
+      feedback: "Feedback para la pregunta 8",
+    },
+    {
+      text: "Pregunta 9",
+      options: ["Opción 9", "Opción 2", "Opción 3"],
+      correctAnswer: "Opción 9",
+      feedback: "Feedback para la pregunta 9",
+    },
+    {
+      text: "Pregunta 10",
+      options: ["Opción 1", "Opción 10", "Opción 3"],
+      correctAnswer: "Opción 10",
+      feedback: "Feedback para la pregunta 10",
+    },
+  ],
+};

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+    <general>
+        <title>
+            <langstring xml:lang="es">Ejemplo de Curso SCORM</langstring>
+        </title>
+        <description>
+            <langstring xml:lang="es">Este es un ejemplo de un curso SCORM 1.2</langstring>
+        </description>
+        <keyword>
+            <langstring xml:lang="es">SCORM, Ejemplo</langstring>
+        </keyword>
+    </general>
+    <lifeCycle>
+        <version>
+            <langstring xml:lang="es">1.0</langstring>
+        </version>
+        <status>
+            <source>LOMv1.0</source>
+            <value>final</value>
+        </status>
+        <contribute>
+            <role>
+                <source>LOMv1.0</source>
+                <value>author</value>
+            </role>
+            <centity>
+                <vcard>BEGIN:VCARD
+VERSION:3.0
+FN:Autor del Curso
+END:VCARD</centity>
+            </contribute>
+        </lifeCycle>
+    </lom>

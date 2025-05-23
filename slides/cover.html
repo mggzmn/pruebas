@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cover Page</title>
+    <style>
+      .cover-container {
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+        padding: 0 1rem;
+        text-align: center;
+      }
+
+      /* Pseudoelementos decorativos principales */
+      .cover-container::before,
+      .cover-container::after {
+        content: "";
+        position: absolute;
+        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+        opacity: 0.55;
+        z-index: 1;
+        pointer-events: none;
+        filter: blur(2px);
+      }
+      .cover-container::before {
+        top: -100px;
+        left: -120px;
+        width: 340px;
+        height: 340px;
+        background: linear-gradient(135deg, #a67cff 60%, #ff6b6b 100%);
+        box-shadow: 0 0 80px 10px #a67cff55;
+      }
+      .cover-container::after {
+        bottom: -100px;
+        right: -120px;
+        width: 340px;
+        height: 340px;
+        background: linear-gradient(135deg, #4caf50 40%, #9c6eff 100%);
+        box-shadow: 0 0 80px 10px #4caf5055;
+      }
+
+      /* Más elementos decorativos */
+      .cover-bubble {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.7;
+        pointer-events: none;
+        z-index: 2;
+        filter: blur(1px);
+        animation: float-bubble 8s ease-in-out infinite alternate;
+      }
+      .cover-bubble.b1 {
+        width: 70px; height: 70px;
+        left: 10%; top: 18%;
+        background: linear-gradient(135deg, #ff6b6b 60%, #a67cff 100%);
+        animation-delay: 0s;
+      }
+      .cover-bubble.b2 {
+        width: 40px; height: 40px;
+        left: 80%; top: 10%;
+        background: linear-gradient(135deg, #4caf50 60%, #ff6b6b 100%);
+        animation-delay: 2s;
+      }
+      .cover-bubble.b3 {
+        width: 55px; height: 55px;
+        left: 85%; bottom: 18%;
+        background: linear-gradient(135deg, #9c6eff 60%, #a67cff 100%);
+        animation-delay: 1.5s;
+      }
+      .cover-bubble.b4 {
+        width: 30px; height: 30px;
+        left: 20%; bottom: 10%;
+        background: linear-gradient(135deg, #ff6b6b 60%, #4caf50 100%);
+        animation-delay: 3s;
+      }
+      .cover-bubble.b5 {
+        width: 50px; height: 50px;
+        left: 60%; bottom: 5%;
+        background: linear-gradient(135deg, #a67cff 60%, #4caf50 100%);
+        animation-delay: 4s;
+      }
+      @keyframes float-bubble {
+        0% { transform: translateY(0) scale(1);}
+        100% { transform: translateY(-30px) scale(1.08);}
+      }
+
+      .cover-leaf {
+        position: absolute;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.8;
+        width: 160px;
+        height: 260px;
+        background: none;
+        background-image: repeating-linear-gradient(120deg, #d6b98c 0 8px, transparent 8px 16px);
+        clip-path: ellipse(60% 90% at 50% 50%);
+        filter: blur(0.5px);
+      }
+      .cover-leaf.left {
+        left: -40px;
+        top: 15%;
+        transform: rotate(-18deg);
+      }
+      .cover-leaf.right {
+        right: -40px;
+        bottom: 10%;
+        transform: rotate(18deg) scaleX(-1);
+      }
+
+      .cover-container h1,
+      .cover-container h2 {
+        z-index: 3;
+        position: relative;
+        margin-bottom: 0.5em;
+      }
+      .cover-container h1 {
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+      }
+      .cover-container h2 {
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 1em;
+      }
+      .cover-container p {
+        font-size: 1.1rem;
+        z-index: 3;
+        position: relative;
+        color: #fff;
+      }
+
+      @media (max-width: 600px) {
+        .cover-container::before,
+        .cover-container::after {
+          width: 140px;
+          height: 140px;
+        }
+        .cover-leaf {
+          width: 80px;
+          height: 120px;
+        }
+        .cover-container h1 {
+          font-size: 2rem;
+        }
+        .cover-container h2 {
+          font-size: 1.2rem;
+        }
+        .cover-bubble {
+          width: 30px !important;
+          height: 30px !important;
+        }
+      }
+
+      .cover-container button {
+        margin: 15px;
+        padding: 12px 36px;
+        font-size: 1.1rem;
+        z-index: 4;
+        position: relative;
+        border: none;
+        border-radius: 30px;
+        background: #4caf50;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 16px rgba(76, 79, 162, 0.12), 0 1.5px 6px rgba(76, 175, 80, 0.10);
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        cursor: pointer;
+        outline: none;
+      }
+      .cover-container button:hover,
+      .cover-container button:focus {
+        background: #764ba2;
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 8px 24px rgba(76, 79, 162, 0.18), 0 3px 12px rgba(76, 175, 80, 0.14);
+      }
+      .cover-container button:active {
+        background: #388e3c;
+        transform: scale(0.98);
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover-container">
+      <span class="cover-leaf left"></span>
+      <span class="cover-leaf right"></span>
+      <span class="cover-bubble b1"></span>
+      <span class="cover-bubble b2"></span>
+      <span class="cover-bubble b3"></span>
+      <span class="cover-bubble b4"></span>
+      <span class="cover-bubble b5"></span>
+      <h1>Curso de MDC</h1>
+      <h2>Bienvenido</h2>
+      <p>Este curso está diseñado para ayudarte a comprender los conceptos básicos de MDC.</p>
+      <button id="btn-start">Iniciar</button>
+      <button id="btn-resume" class="hidden">Retomar</button>
+    </div>
+    <script>
+      const startBtn = document.getElementById("btn-start");
+      const resumeBtn = document.getElementById("btn-resume");
+      if (courseController.hasExam && courseController.isLastSlide()) {
+        startBtn.classList.add("hidden");
+      }
+      if (courseController.shouldShowResumeButton()) {
+        resumeBtn.classList.remove("hidden");
+      }
+      startBtn.addEventListener("click", () => {
+        sessionStorage.clear();
+        courseController.resetScormData();
+        courseController.loadPage(1);
+      });
+      resumeBtn.addEventListener("click", () => {
+        courseController.resumeProgress();
+      });
+    </script>
+  </body>
+</html>

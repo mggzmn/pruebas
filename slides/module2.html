@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Module 2</title>
+    <style></style>
+  </head>
+  <body>
+    <section id="section1" class="slide-section visible" data-function="handleSectionA">
+      <h2 id="title" class="opacity-0">Primera Sección</h2>
+      <p id="p1" class="opacity-0">Contenido...</p>
+    </section>
+
+    <section id="section2" class="slide-section" data-function="handleSectionB">
+      <h2 id="title2" class="opacity-0">Segunda Sección</h2>
+      <p id="p2" class="opacity-0">Contenido...</p>
+    </section>
+
+    <script>
+      /**
+       * Maneja la primera sección
+       * Reproduce audio y configura eventos para mostrar elementos con animación
+       * @param {HTMLElement} section - Elemento de la sección
+       */
+      window.handleSectionA = function handleSectionA(section) {
+        const audioSrc = "multimedia/audio/06_intro_interactividad_3.mp3";
+        const sectionId = section && section.id ? section.id : "section1";
+        const events = [
+          {
+            time: 3,
+            actions: [{ type: "removeClass", targetId: "title", classes: ["opacity-0"] }],
+          },
+          {
+            time: 5,
+            actions: [{ type: "removeClass", targetId: "p1", classes: ["opacity-0"] }],
+          },
+        ];
+        const onEndActions = [
+          { type: "sectionCompleted", sectionId },
+          { type: "nextSection", delay: 2000 },
+        ];
+        courseController.sectionController.audioHandler.prepareAudioSync(() => {
+          courseController.sectionController.audioHandler.setupAudioWithEvents(audioSrc, events, onEndActions);
+        });
+      };
+
+      /**
+       * Maneja la segunda sección
+       * Reproduce audio y configura eventos para mostrar elementos con animación
+       * @param {HTMLElement} section - Elemento de la sección
+       */
+      window.handleSectionB = function handleSectionB(section) {
+        const audioSrc = "multimedia/audio/06_intro_interactividad_3.mp3";
+        const sectionId = section && section.id ? section.id : "section2";
+        const events = [
+          {
+            time: 3,
+            actions: [{ type: "removeClass", targetId: "title2", classes: ["opacity-0"] }],
+          },
+          {
+            time: 5,
+            actions: [{ type: "removeClass", targetId: "p2", classes: ["opacity-0"] }],
+          },
+        ];
+        const onEndActions = [
+          { type: "sectionCompleted", sectionId },
+          { type: "nextSection", delay: 2000 },
+        ];
+        courseController.sectionController.audioHandler.prepareAudioSync(() => {
+          courseController.sectionController.audioHandler.setupAudioWithEvents(audioSrc, events, onEndActions);
+        });
+      };
+    </script>
+  </body>
+</html>
